@@ -38,7 +38,7 @@ ml2_config_file:
 {% endif %}
 {% if 'vxlan' in pillar['neutron']['type_drivers'] %}
         ml2_type_vxlan:
-          vni_ranges: "{{ pillar['neutron']['type_drivers']['gre']['tunnel_start'] }}:{{ pillar['neutron']['type_drivers']['gre']['tunnel_end'] }}"
+          vni_ranges: "{{ pillar['neutron']['type_drivers']['vxlan']['tunnel_start'] }}:{{ pillar['neutron']['type_drivers']['vxlan']['tunnel_end'] }}"
 {% endif %}
         ovs:
 {% if 'flat' in pillar['neutron']['type_drivers'] or 'vlan' in pillar['neutron']['type_drivers'] %}
